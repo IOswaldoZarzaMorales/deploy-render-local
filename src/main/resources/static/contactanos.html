@@ -39,27 +39,29 @@
   </header>
   <!--------------------- FORMS CONTÁCTANOS ----------->
   <main class="contactanos">
-    <!-- <div id="modalContainer"></div>  -->
+    <div id="modalContainer"></div> 
     <div class="imagen">   
      <div class="contactanos-formulario">
        <div class="formulario">
-        <form action="/action_page.php">
+        <form id="alertEnviado"
+        action="https://formspree.io/f/mayrodgr"
+        method="POST">
             <h1>Contáctanos</h1>
           <div class="mb-3 mt-3">
             <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Ingrese un correo electrónico" name="email">
+            <input type="email" class="form-control" id="email" placeholder="Ingrese un correo electrónico" name="email" required>
           </div>
           <div class="mb-3">
             <label for="sbj" class="form-label">Asunto:</label>
-            <input type="asunto" class="form-control" id="subject" placeholder="Asunto" name="sbj">
+            <input type="asunto" class="form-control" id="subject" placeholder="Asunto" name="sbj" required>
+          </div>
+          <div class="text-area">
+            <label for="comment">Agregar comentarios:</label>
+            <textarea class="form-control" rows="5" id="comment" name="text" required></textarea>
+            <br>
+            <button type="submit"  class="especial2">Enviar</button>
           </div>
         </form>
-      </div>
-      <div class="text-area">
-        <label for="comment">Agregar comentarios:</label>
-        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-        <br>
-        <button type="submit" class="especial2">Enviar</button>
       </div>
     </div>
   </main>

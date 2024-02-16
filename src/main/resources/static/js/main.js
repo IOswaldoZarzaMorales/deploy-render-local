@@ -12,6 +12,12 @@ cerrar.addEventListener("click", () => {
   nav.classList.remove("visible");
 });
 
+const alertaEnviado = document.getElementById('alertEnviado');
+alertaEnviado.addEventListener('submit', () => {
+// e.preventDefault();
+alert("Gracias por ponerte en contacto con nosotros, nos comunicamos a la brevedad.")
+});
+
 /****************************Inicio Página invitaciones****************************/
 
 document
@@ -121,6 +127,8 @@ userCardDiv.appendChild(botonDescargar);
 
   }
 
+ 
+ 
   //redirección de registro completo a MiLokl
   //<---------------------------------------->
 /*   // const registro = document.getElementById('toRegistroCompleto');
