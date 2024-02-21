@@ -76,3 +76,8 @@ color: white;
     font-size: 50px;
     color: #732796;
 }
+
+.botones-dos{
+    display: flex; 
+    justify-content: center;
+}

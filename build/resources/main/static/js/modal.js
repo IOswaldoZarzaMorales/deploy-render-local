@@ -17,16 +17,18 @@ document.addEventListener('DOMContentLoaded', async function () {
             const password = document.querySelector('#password').value;
             const confirmPassword = document.querySelector('#confirmacion').value; 
 
-            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%*?&]{6,}$/;
-            if (!passwordRegex.test(password)) {
-                errorMessages.textContent = 'La contraseña debe contener al menos 6 caracteres, una letra, un número y un símbolo.';
-                return;
-            } 
-     
             if (password !== confirmPassword) {
                 errorMessages.textContent = 'Las contraseñas no coinciden.';
                 return;
             }
+
+         /*    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%*?&]{6,}$/;
+            if (!passwordRegex.test(password)) {
+                errorMessages.textContent = 'La contraseña debe contener al menos 6 caracteres, una letra, un número y un símbolo.';
+                return;
+            }  */
+     
+            
 
             const user = {   
                 nombre: name,           

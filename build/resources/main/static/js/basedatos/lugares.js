@@ -156,7 +156,7 @@ const terrazaPolanco = {
 }; //pendiente
 
 
-export default Salones = [
+const Salones = [
   salonLuzcina,
   salonXelhua,
   haciendaSanFernando,
