@@ -12,12 +12,18 @@ cerrar.addEventListener("click", () => {
   nav.classList.remove("visible");
 });
 
-const alertaEnviado = document.getElementById('alertEnviado');
+/* const alertaEnviado = document.getElementById('alertEnviado');
 alertaEnviado.addEventListener('submit', () => {
 // e.preventDefault();
 alert("Gracias por ponerte en contacto con nosotros, nos comunicamos a la brevedad.")
-});
+}); */
 
+const alertaEnviado = document.querySelector('.especial2');
+alertaEnviado.addEventListener('click', () => {
+  document.getElementById("email").value = '';
+  document.getElementById("subject").value = '';
+  document.getElementById("comment").value = '';
+});
 /****************************Inicio Página invitaciones****************************/
 
 document
@@ -62,42 +68,43 @@ function mostrarDatos() {
   // Dibujar la imagen original en el canvas
   ctx.drawImage(imagenActiva, 0, 0);
 
-
+// variable de color de texto 
+const colorTexto = document.getElementById("inputColorTexto").value;
 
   // Calcular la posición x centrada
 const xCentrado = canvas.width/ 2;
 
 // Agregar el texto al canvas
 ctx.font = "120px Comic Sans MS"; // Estilo de fuente y tamaño
-ctx.fillStyle = "#333"; // Color del texto
+ctx.fillStyle = colorTexto; // Color del texto
 ctx.textAlign = "center";
 ctx.fillText(inputNombre, xCentrado, 800);
 
 ctx.font = "50px Jaldi"; // Estilo de fuente y tamaño
-ctx.fillStyle = "#333"; // Color del texto
+ctx.fillStyle = colorTexto; // Color del texto
 ctx.textAlign = "center";
 const customFecha = `El día: ${inputFecha},`
 ctx.fillText(customFecha, xCentrado, 950);
 
 ctx.font = "60px Jaldi"; // Estilo de fuente y tamaño
-ctx.fillStyle = "#333"; // Color del texto
+ctx.fillStyle = colorTexto; // Color del texto
 ctx.textAlign = "center";
 const customHora = `a las: ${inputHora} hrs.`
 ctx.fillText(customHora, xCentrado, 1100);
 
 ctx.font = "45px Jaldi"; // Estilo de fuente y tamaño
-ctx.fillStyle = "#333"; // Color del texto
+ctx.fillStyle = colorTexto; // Color del texto
 ctx.textAlign = "center";
 const customDireccion = `Te esperamos en: ${inputDireccion}`
 ctx.fillText(customDireccion, xCentrado, 1250);
 
 ctx.font = "50px Jaldi"; // Estilo de fuente y tamaño
-ctx.fillStyle = "#333"; // Color del texto
+ctx.fillStyle = colorTexto; // Color del texto
 ctx.textAlign = "center";
 ctx.fillText(inputComentar, xCentrado, 1400);
 
 ctx.font = "50px Jaldi"; // Estilo de fuente y tamaño
-ctx.fillStyle = "#333"; // Color del texto
+ctx.fillStyle = colorTexto; // Color del texto
 ctx.textAlign = "center";
 const customTel =  `Confirma tu asistencia al: ${inputTelefono}`;
 ctx.fillText(customTel, xCentrado, 1550);
@@ -127,66 +134,3 @@ userCardDiv.appendChild(botonDescargar);
 
   }
 
- 
- 
-  //redirección de registro completo a MiLokl
-  //<---------------------------------------->
-/*   // const registro = document.getElementById('toRegistroCompleto');
-  // registro.addEventListener('click', () =>{ */
-  //   /* e.preventDefault() */
- /*  //   alert("Gracias por completar tu registro, tu Lok'l ha sido publicado con éxito");
-  //   window.location.href = 'miespacio.html' 
-  // });  */
-
-  //<---------------------------------------->
-
-  //  document.getElementById('myForm').addEventListener('submit', function (event) {
-  //   event.preventDefault();
-
-  //   alert("Gracias por completar tu registro, tu Lok'l ha sido publicado con éxito");
-
-  //   window.location.href = 'index.html' 
-    
-  // })
-
-  //<---------------------------------------->
-
-/****************************Término Página invitaciones****************************/
-
-/****************Insertar lugares******************/
-/* const lugaresContainer = document.getElementById("lugaresContainer");
-
-const lugares = [haciendaSanFernando, salonMoezllonz, salonLienzo, centroVeracruzanoCoyoacan, salonAquiahuac];
-
-lugares.forEach(lugar => {
-  const card = document.createElement("div");
-  card.classList.add("card");
-
-  card.innerHTML = `
-    <h2>${lugar.nombre}</h2>
-    <p>Precio: $${lugar.precio}</p>
-    <p>Capacidad: ${lugar.capacidad}</p>
-    <p>Ubicación: ${lugar.ubicacion}</p>
-  `;
-
-  lugaresContainer.appendChild(card);
-}); */
-
-
-//llamar registro completo con el boton de anunciar espacio
-
-// const lugaresContainer = document.getElementById("lugaresContainer");
-
-// lugares.forEach(lugar => {
-//   const card = document.createElement("div");
-//   card.classList.add("card");
-
-//   card.innerHTML = `
-//     <h2>${lugar.nombre}</h2>
-//     <p>Precio: $${lugar.precio}</p>
-//     <p>Capacidad: ${lugar.capacidad}</p>
-//     <p>Ubicación: ${lugar.ubicacion}</p>
-//   `;
-
-//   lugaresContainer.appendChild(card);
-// });

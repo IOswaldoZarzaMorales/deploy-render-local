@@ -70,7 +70,7 @@
     <div class="container-fluid" id="container-crear-invitacion">
       <div class="row">
     <section class="invitaciones seccion-clara col-12 col-md-6">
-      <h2 class="seccion-titulo">2.Escoge un diseño.</h2>
+      <h2 class="seccion-titulo" id="seccion-titulo" ><span class="colorLetras">2.Escoge un diseño.</span></h2>
         <!--Carrusel-->
         <div id="invitaciones-carrusel" class="carousel carousel-dark slide"  data-bs-interval="false">
          <div class="carousel-inner">
@@ -162,6 +162,10 @@
           <label for="inputComentar" class="form-label">Teléfono</label>
           <input type="tel" class="form-control" id="inputTelefono" required>
         </div>
+        <div class="mb-3">
+          <label for="inputColorTexto" class="form-label">Selecciona un color para el texto</label>
+          <input type="color" class="form-control" id="inputColorTexto" value="#333">
+        </div>  
         <button type="button" onclick="mostrarDatos()" class="especial2">Confirmar datos</button>
       </form>
      </section>
@@ -172,7 +176,7 @@
     </div>
 
     <div class="blockMorado col-12 p-3 col-xxl-12 col-sm-12">
-      <p class="text-white" id="linkContactanos">¿Necesitas una invitación personalizada? <a href="./contactanos.html">!Contáctanos!</a></p>
+      <p class="text-white" id="linkContactanos">¿Necesitas una invitación personalizada? <a href="./contactanos.html">¡Contáctanos!</a></p>
     </div>
     
     <div id="modalContainer"></div>

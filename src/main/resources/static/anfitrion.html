@@ -43,117 +43,95 @@
         </nav>
         <!------------------------ NAVBAR ----------------------->
     </header>
-<main class="anfi-main"> 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 sccs ">
-            </div>
-            <div class="container col-6 p-3">
-                <form class="form-anfitrion">
-                    <h1>Completa la información de tu espacio</h1>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="inputCalle"  required>
-                      </div>
-                      <div class="mb-3">
-                        <label for="tipo_espacio" class="form-label">Tipo de espacio</label>
-                        <input type="text" class="form-control" id="inputEspacio"  required>
-                      </div>
-                      <div class="mb-3">
-                        <label for="capacidad" class="form-label">Capacidad</label>
-                        <input type="text" class="form-control" id="inputCapacidad" required>
-                      </div>
-                      <div class="mb-3">
-                        
-                        <div class="row calle-numero">
-                            
-                            <!-- <div class="col">
-                                <input type="date" class="form-control" id="inputFecha">
-                                <div id="numeroHelp" class="form-text">Fecha</div>
-                            </div>
-                            <div class="col">
-                                <input type="time" class="form-control" id="inputHora">
-                                <div id="numeroHelp" class="form-text">Hora</div>
-                            </div> -->
+    <main class="anfi-main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 sccs ">
+                </div>
+                <div class="container col-6 p-3">
+                    <form class="form-anfitrion">
+                        <h1>Completa la información de tu espacio</h1>
+                        <div class="mb-3">
+                            <label for="inputNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="inputNombre" required>
                         </div>
-                    </div>
-                    <!-- <label>Tipo de Espacio</label>
-                    <select class="form-select form-select-sm mb-3" aria-label="Medium select example">
+                        <label>Tipo de Espacio</label>
+                    <select class="form-select form-select-sm mb-3" aria-label="Medium select example" id="inputEspacio" required>
                         <option selected>Selecciona un espacio</option>
-                        <option value="1">Salón</option>
-                        <option value="2">Jardín</option>
-                        <option value="3">Terraza</option>
-                        <option value="3">Foro</option>
-                        <option value="3">Otro</option>
+                         <option value="SALON">SALON</option>
+                         <option value="JARDIN">JARDIN</option>
+                         <option value="TERRAZA">TERRAZA</option>
+                         <option value="FORO">FORO</option>
+                         <option value="OTRO">OTRO</option>
                       </select>
                       <label>Capacidad</label>
-                    <select class="form-select form-select-sm mb-3" aria-label="Medium select example">
+                    <select class="form-select form-select-sm mb-3" aria-label="Medium select example" id="inputCapacidad" required>
                         <option selected>Selecciona una Capacidad máxima</option>
-                        <option value="1">50</option>
-                        <option value="2">100</option>
-                        <option value="3">150</option>
-                        <option value="4">200</option>
-                        <option value="5">250</option>
-                        <option value="6">300</option>
-                        <option value="7">350</option>
-                        <option value="8">400</option>
-                        <option value="9">450</option>
-                        <option value="10">500</option>
-                        <option value="11">550</option>
-                        <option value="12">Más de 550</option>
-                      </select> -->
-                      <div class="mb-3">
-                        <label for="Direccion" class="form-label">Dirección</label>
-                        <div class="col">
-                            <input type="text" class="form-control" id="inputCalle" required>
-                            <div id="calleHelp" class="form-text">Calle</div>
-                        </div>
-                        <div class="row calle-numero">
-                            
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                        <option value="250">250</option>
+                        <option value="300">300</option>
+                        <option value="350">350</option>
+                        <option value="400">400</option>
+                        <option value="450">450</option>
+                        <option value="500">500</option>
+                        <option value="550">550</option>
+                        <option value="551">Más de 550</option>
+                      </select>
+                        <div class="mb-3">
+                            <label for="Direccion" class="form-label">Dirección</label>
                             <div class="col">
-                                <input type="text" class="form-control" id="inputNumero" required>
-                                <div id="numeroHelp" class="form-text">No. ext</div>
+                                <input type="text" class="form-control" id="inputCalle" required>
+                                <div id="calleHelp" class="form-text">Calle</div>
                             </div>
-                            <div class="col">
-                                <input type="text" class="form-control" id="inputNumero" required>
-                                <div id="numeroHelp" class="form-text">No. int</div>
+                            <div class="row calle-numero">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="inputNumeroInt" required>
+                                    <div id="numeroHelp" class="form-text">No. int</div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="inputNumeroExt" required>
+                                    <div id="numeroHelp" class="form-text">No. ext</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="inputAlcaldia" required>
-                        <div id="alcaldiaHelp" class="form-text">Alcaldía o Municipio</div>
-                      </div>
-                    <div class="mb-3">
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="inputCiudad" required>
-                            <div id="ciudadHelp" class="form-text">Estado</div>
-                          </div>
-                          <div class="mb-3">
-                            <input type="text" class="form-control" id="inputCiudad" required>
-                            <div id="ciudadHelp" class="form-text">Código Postal</div>
-                          </div>
+                            <input type="text" class="form-control" id="inputAlcaldia" required>
+                            <div id="alcaldiaHelp" class="form-text">Alcaldía o Municipio</div>
+                        </div>
                         <div class="mb-3">
-                      <label for="InputPrecio" class="form-label">Precio mínimo por persona</label>
-                      <input type="number" class="form-control" id="inputPrecio" required>
-                    </div>
-                        <div class="mb-3">
-                        <label for="formFileMultiple" class="form-label">Sube tus fotos</label>
-                        <input class="form-control" type="file" id="inputFotos" multiple>
-                      </div>
-                    <button id="toRegistroCompleto" type="submit" class="btn btn-primary"><a href="./registroCompleto.html">Anunciar Espacio</a></button>
-                  </form>
-               
-            </div>
-     
-        </div>
-        <div class="container caja-imagen col-6 ">
-        </div>
-    </div>
-    
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="inputEstado" required>
+                                <div id="ciudadHelp" class="form-text">Estado</div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="inputCodigo" required>
+                                <div id="ciudadHelp" class="form-text">Código Postal</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputPrecio" class="form-label">Precio mínimo por persona</label>
+                                <input type="number" class="form-control" id="inputPrecio" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label">Sube tus fotos</label>
+                                <input class="form-control" type="file" id="inputFotos" multiple>
+                            </div>
+                            <button id="toRegistroCompleto" type="submit" class="btn btn-primary"><!-- <a
+                                    href="./registroCompleto.html">Anunciar Espacio</a> --></button>
+                    </form>
 
-    <div id="modalContainer"></div>
-</main>
+                </div>
+
+            </div>
+            <div class="container caja-imagen col-6 ">
+            </div>
+        </div>
+
+
+        <div id="modalContainer"></div>
+    </main>
     <!-------------------------- FOOTER ------------------------>
 
     <footer class="pie-pagina">
