@@ -54,23 +54,31 @@ const url = 'https://loklapp.onrender.com/admin/lugares';
 
 //trycatch
 try{
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
+const response = await fetch(url, {
+method: 'POST',
+ headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(lugar)
-  });
+   body: JSON.stringify(lugar)
+ });
 
- /*  if (!response.ok) {
+ if (!response.ok) {
     throw new Error('Error al registrar el lugar');
-  }  */
+  }
   const data = await response.json();
-  console.log(data);
+ console.log(data);
   return alert('¡Lugar creado con éxito!'); 
-  //window.location.href = './miespacio.html';
-}catch(error) {
-  console.error('Error al crear el lugar:', error);
+   window.location.href = './miespacio.html';
+ }catch(error) {
+   console.error('Error al crear el lugar:', error);
  
-} 
-  })
+ } 
+
+})
+
+  const botonCrearEvento = document.getElementById('BotonAnunciar');
+    BotonAnunciar.addEventListener('submit', function() {
+        
+        alert("¡Anuncio creado con éxito!");
+        window.location.href = "anfitrion.html";
+    });

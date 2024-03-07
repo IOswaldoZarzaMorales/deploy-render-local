@@ -12,11 +12,11 @@ cerrar.addEventListener("click", () => {
   nav.classList.remove("visible");
 });
 
-/* const alertaEnviado = document.getElementById('alertEnviado');
-alertaEnviado.addEventListener('submit', () => {
+// const alertaEnviado = document.getElementById('alertEnviado');
+// alertaEnviado.addEventListener('submit', () => {
 // e.preventDefault();
-alert("Gracias por ponerte en contacto con nosotros, nos comunicamos a la brevedad.")
-}); */
+// alert("Gracias por ponerte en contacto con nosotros, nos comunicamos a la brevedad.")
+// }); 
 
 const alertaEnviado = document.querySelector('.especial2');
 alertaEnviado.addEventListener('click', () => {
