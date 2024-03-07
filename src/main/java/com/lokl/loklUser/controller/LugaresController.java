@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lokl.loklUser.model.Lugares;
 import com.lokl.loklUser.service.LugaresService;
 
+
+
 @RestController 
 @RequestMapping("admin")
 @CrossOrigin(origins="*", methods={RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
@@ -51,12 +53,14 @@ public class LugaresController {
 		lugaresService.deleteLugar(id);
 	}
 	
-	//Post, crear un nuevo usuario
-	//¿como agrego usaurios desde Postman? Tenemos que establecer 
+	//Post, crear un nuevo lugar
+	//¿como agrego lugares desde Postman? Tenemos que establecer 
 	@PostMapping("lugares")
 	public Lugares newLugar(@RequestBody Lugares newLugar) {
 		return lugaresService.addLugar(newLugar);
 	}
+	
+	
 	
 	//Put, modificar/actualizar a un usuario existente
 	@PutMapping("lugares/{id}")
