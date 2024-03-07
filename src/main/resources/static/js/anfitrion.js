@@ -25,7 +25,7 @@ estado: estado,
 codigo_postal: codigoPostal,
 precio: precio
 } 
-
+//const
 const url = 'https://loklapp.onrender.com/admin/lugares';
 // prueba'http://localhost:8080/admin/lugares';
 
