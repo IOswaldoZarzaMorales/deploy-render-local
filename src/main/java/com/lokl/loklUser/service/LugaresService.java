@@ -1,3 +1,4 @@
+
 package com.lokl.loklUser.service;
 
 import java.util.List;
@@ -54,10 +55,10 @@ public class LugaresService {
 			 */
 			public Lugares addLugar(Lugares lugar) {
 				//Crear una variable de tipo User para buscar el email de usuario. Traemos el valor de la DB y después realizo la sentencia condicional (!if), si es true se cumple, en caso contrario, arrojar una excepción
-				Lugares existingLugar = repository.findByNombre(lugar.getNombre());
-				if (existingLugar != null) {
-					throw new IllegalStateException("El lugar registrado ya esta asociado a un lugar existente");
-				}
+				//Lugares existingLugar = repository.findByNombre(lugar.getNombre());
+				//if (existingLugar != null) {
+					//throw new IllegalStateException("El lugar registrado ya esta asociado a un lugar existente");
+				//}
 				return repository.save(lugar);
 			}
 			
@@ -69,7 +70,7 @@ public class LugaresService {
 			public Lugares replaceLugar(Lugares lugar, Long id) {
 				return repository.findById(id)
 						.map(lugarMap -> {  //Funcion lambda
-							lugarMap.setTipoEspacio(lugar.getTipoEspacio());
+							lugarMap.setEspacio(lugar.getEspacio());
 							lugarMap.setNombre(lugar.getNombre());
 							lugarMap.setCapacidad(lugar.getCapacidad());
 							lugarMap.setCalle(lugar.getCalle());
@@ -79,6 +80,7 @@ public class LugaresService {
 							lugarMap.setEstado(lugar.getEstado());
 							lugarMap.setCodigo_postal(lugar.getCodigo_postal());
 							lugarMap.setPrecio(lugar.getPrecio());
+							lugarMap.setImagen(lugar.getImagen());
 							return repository.save(lugarMap);
 						})
 						.orElseGet(() -> {

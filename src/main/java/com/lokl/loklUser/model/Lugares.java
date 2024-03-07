@@ -1,11 +1,9 @@
+
 package com.lokl.loklUser.model;
 
 
-import java.util.Objects;
-import jakarta.persistence.Column;
+//import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,65 +15,33 @@ import jakarta.persistence.Table;
 public class Lugares {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_lugar")
+	//@Column(name="id_lugar")
 	private Long id;
-	@Column(name="nombre")
+	//@Column(name="nombre")
 	private String nombre;
-	@Enumerated(EnumType.STRING) 
-	@Column(name="tipo_espacio")
-	private TipoEspacio tipoEspacio;
-	@Enumerated(EnumType.STRING) 
-	@Column(name="capacidad")
-	private Capacidad capacidad;
-	@Column(name="calle")
+	//@Column(name="espacio", nullable=false, length=100)
+	private String espacio;
+	//@Column(name="capacidad")
+	private int capacidad;
+	//@Column(name="calle")
 	private String calle;
-	@Column(name="no_int")
+	//@Column(name="no_int")
 	private int no_int;
-	@Column(name="no_ext")
+	//@Column(name="no_ext")
 	private int no_ext;
-	@Column(name="alcaldia")
+	//@Column(name="alcaldia")
 	private String alcaldia;
-	@Column(name="estado")
+	//@Column(name="estado")
 	private String estado;
-	@Column(name="codigo_postal")
+	//@Column(name="codigo_postal")
 	private int codigo_postal;
-	@Column(name="precio")
+	//@Column(name="precio")
 	private int precio;
+	//@Column(name="imagen")
+	private String imagen;
 	
 	
 	
-	
-	
-	public enum TipoEspacio {
-	    SALON,
-	    JARDIN,
-	    TERRAZA,
-	    FORO,
-	    OTRO
-	}
-	public enum Capacidad {
-	    CINCUENTA(50),
-	    CIEN(100),
-	    CIENTOCUENTA(150),
-	    DOSCIENTOS(200),
-	    DOSCIENTOSCINCUENTA(250),
-	    TRESCIENTOS(300),
-	    TRESCIENTOSCINCUENTA(350),
-	    CUATROCIENTOS(400),
-	    CUATROCIENTOSCINCUENTA(450),
-	    QUINIENTOS(500),
-	    QUINIENTOSCINCUENTA(550),
-		MASDE550(+550);
-	private final int valor;
-
-	    Capacidad(int valor) {
-	        this.valor = valor;
-	    }
-
-	    public int getValor() {
-	        return valor;
-	    }
-	}
 	
 	// JPA necesita un metodo que le permita contruir cualquier objeto sin tomar en cuenta sus atributos
 	public Lugares() {
@@ -85,11 +51,11 @@ public class Lugares {
 	
 
 	//CONSTRUCTOR
-	public Lugares(Long id, String nombre, TipoEspacio tipoEspacio, Capacidad capacidad, String calle, int no_int,
-			int no_ext, String alcaldia, String estado, int codigo_postal, int precio) {
+	public Lugares(Long id, String nombre, String espacio, int capacidad, String calle, int no_int,
+			int no_ext, String alcaldia, String estado, int codigo_postal, int precio, String imagen) {
 		this.id = id;
 		this.nombre = nombre;
-		this.tipoEspacio = tipoEspacio;
+		this.espacio = espacio;
 		this.capacidad = capacidad;
 		this.calle = calle;
 		this.no_int = no_int;
@@ -98,7 +64,9 @@ public class Lugares {
 		this.estado = estado;
 		this.codigo_postal = codigo_postal;
 		this.precio = precio;
+		this.imagen = imagen;
 	}
+
 
 
 
@@ -131,28 +99,28 @@ public class Lugares {
 
 
 
-	public TipoEspacio getTipoEspacio() {
-		return tipoEspacio;
+	public String getEspacio() {
+		return espacio;
 	}
 
 
 
 
-	public void setTipoEspacio(TipoEspacio tipoEspacio) {
-		this.tipoEspacio = tipoEspacio;
+	public void setEspacio(String espacio) {
+		this.espacio = espacio;
 	}
 
 
 
 
-	public Capacidad getCapacidad() {
+	public int getCapacidad() {
 		return capacidad;
 	}
 
 
 
 
-	public void setCapacidad(Capacidad capacidad) {
+	public void setCapacidad(int capacidad) {
 		this.capacidad = capacidad;
 	}
 
@@ -254,43 +222,28 @@ public class Lugares {
 		this.precio = precio;
 	}
 
+	
+	public String getImagen() {
+		return imagen;
+	}
+	
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 
-
-
+	}
 	@Override
 	public String toString() {
-		return "Lugares [id=" + id + ", nombre=" + nombre + ", tipoEspacio=" + tipoEspacio + ", capacidad=" + capacidad
+		return "Lugares [id=" + id + ", nombre=" + nombre + ", espacio=" + espacio + ", capacidad=" + capacidad
 				+ ", calle=" + calle + ", no_int=" + no_int + ", no_ext=" + no_ext + ", alcaldia=" + alcaldia
-				+ ", estado=" + estado + ", codigo_postal=" + codigo_postal + ", precio=" + precio + "]";
+				+ ", estado=" + estado + ", codigo_postal=" + codigo_postal + ", precio=" + precio + ", imagen=" + imagen + "]";
 	}
 
 
 
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(alcaldia, calle, capacidad, codigo_postal, estado, id, no_ext, no_int, nombre, precio,
-				tipoEspacio);
-	}
 
 
 
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Lugares other = (Lugares) obj;
-		return Objects.equals(alcaldia, other.alcaldia) && Objects.equals(calle, other.calle)
-				&& capacidad == other.capacidad && codigo_postal == other.codigo_postal
-				&& Objects.equals(estado, other.estado) && Objects.equals(id, other.id) && no_ext == other.no_ext
-				&& no_int == other.no_int && Objects.equals(nombre, other.nombre) && precio == other.precio
-				&& tipoEspacio == other.tipoEspacio;
-	}
 	
 	
 	
