@@ -48,7 +48,7 @@ codigo_postal: codigoPostal,
 precio: precio,
 imagen: base64String /*clave*/
 } 
-
+//const
 const url = 'https://loklapp.onrender.com/admin/lugares';
 // prueba'http://localhost:8080/admin/lugares';
 
