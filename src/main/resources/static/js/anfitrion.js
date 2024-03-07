@@ -52,7 +52,7 @@ imagen: base64String /*clave*/
 const url = 'https://loklapp.onrender.com/admin/lugares';
 // prueba'http://localhost:8080/admin/lugares';
 
-
+//trycatch
 try{
   const response = await fetch(url, {
     method: 'POST',
